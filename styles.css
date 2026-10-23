@@ -1,0 +1,157 @@
+
+/*Default Reset*/
+*{
+    /*outline: 1px solid red; /*Outline for debbuging*/
+    box-sizing: border-box; /*Layout reset*/
+    margin: 0; /*Margin reset*/
+    padding: 0; /*Padding reset*/
+} 
+
+/* Altera a seleção em TODO o site */
+::selection { /* Suporte para navegadores antigos da Mozilla */
+  background-color: #a6371e; /* Cor do fundo (usei o vermelho do seu H1) */
+  color: #f4ecd8;            /* Cor da letra (usei o creme da sua página) */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ff0000;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #252525;
+    overflow: hidden;
+}
+
+.container-book {
+    width: clamp(20vw, 75vw, 80vw); 
+    aspect-ratio: 6/4;
+    background-color: #861901;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+p{
+    font-size: clamp(12px, 1vw + 5px, 20px);
+    line-height: 1.6;
+    color: #2c221e;
+    margin-top: 20px;
+    text-align: start;
+    text-indent: 20px;
+}
+
+ul{
+    align-self: center;
+    margin-top: auto;
+    padding: 0;
+    width: 100%;
+    list-style-type: none;
+}
+
+li{
+    user-select: none;
+    font-family: 'Inter', sans-serif;
+    border: 1px solid transparent;
+    font-size: clamp(12px, 1vw + 5px, 20px);
+    color: #2c221e;
+    line-height: 2;
+    padding: 10px;
+    border-radius: 15px;
+    margin: 10px;
+    text-align: start;
+    background-color: #dcd6c45d ;
+    transition: transform 0.3s ease-out;
+
+
+}
+
+li:hover{
+    background-color: #e2d7be;
+    border: 1px solid #a6371e;
+    color: #2c221e;
+    cursor: pointer;
+    text-decoration: none;
+    transform: translateX(5px);
+}
+
+h1{
+    user-select: none;
+    font-family: 'Cinzel', serif;
+    font-size: clamp(14px, 1vw, 24px);
+    color: #8c2d19;
+    margin-bottom: 5px;
+    text-align: start;
+}
+
+i{
+    color: #8c2d19;
+    margin-right: 10px;
+}
+.page {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lora', serif;
+    /* Removemos o background-color daqui para ele não ser atropelado */
+    width: 50%;
+    aspect-ratio: 3/4;  
+    padding: clamp(10px, 3vw, 70px);
+    overflow-y: auto;
+    text-align: center;
+}
+
+/* Aplicando a cor de fundo + o efeito de sombra central na esquerda */
+.page.left {
+    align-items: flex-start;
+    border-radius: 20px 0px 0px 20px;
+    background: linear-gradient(
+        to right, 
+        #f4ecd8 0%, 
+        #f4ecd8 90%, 
+        #cec8b6 100% /* Tom ligeiramente mais escuro simulando o vinco */
+    );
+}
+
+/* Aplicando a cor de fundo + o efeito de sombra central na direita */
+.page.right {
+    align-items: flex-end;
+    border-radius: 0px 20px 20px 0px;
+    background: linear-gradient(
+        to left, 
+        #f4ecd8 0%, 
+        #f4ecd8 90%, 
+        #cec8b6 100% /* Tom ligeiramente mais escuro simulando o vinco */
+    );
+}
+
+hr {
+    align-self: center;
+    border: none;
+    height: 1px;
+    width: 100%;
+    background-color: #84807471;
+}
+
+a{
+    text-decoration: none;
+    color: inherit; /* Mantém a cor do texto */
+    display: block; /* Faz com que o link ocupe toda a área do li */
+}
+
+.stats {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
